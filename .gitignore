@@ -22,6 +22,28 @@
 *.toc
 *.vrb
 *.xdv
+*.pyg
+
+# Otros productos habituales de LaTeX
+*.acn
+*.acr
+*.alg
+*.brf
+*.dvi
+*.glg
+*.glo
+*.gls
+*.lol
+*.maf
+*.mtc
+*.mtc[0-9]*
+*.nlo
+*.nls
+*.thm
+*blx.bib
+
+# Copias de respaldo específicas de editores LaTeX
+*.tex.backup
 
 # Temporales y copias de respaldo de editores
 *~
