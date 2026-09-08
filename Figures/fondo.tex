@@ -1,0 +1,15 @@
+% Adaptación TFI_FRT, actualizada el 2026-09-08.
+% Cambios y créditos: CAMBIOS.md y CREDITOS.md.
+% Código de la plantilla: GPL-3.0, véase LICENSE; imágenes con derechos separados.
+% Fondo de portada de UTN FRT. Compilar desde la raíz del proyecto.
+\documentclass{article}
+\usepackage[a4paper,margin=0pt]{geometry}
+\usepackage{graphicx,eso-pic}
+\pagestyle{empty}
+\AddToShipoutPictureBG*{%
+  \AtPageLowerLeft{\includegraphics[width=7mm,height=\paperheight]{Figures/barra.jpg}}%
+  % Logo a 20 mm del borde superior, conservando sus proporciones.
+  \AtPageUpperLeft{\put(\LenToUnit{102mm},\LenToUnit{-20mm}){%
+    \raisebox{-\height}{\includegraphics[width=90mm]{build/identidadUTNFRT.pdf}}}}%
+}
+\begin{document}\null\end{document}
