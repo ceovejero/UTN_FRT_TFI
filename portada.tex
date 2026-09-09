@@ -5,8 +5,15 @@
 % PORTADA
 %----------------------------------------------------------------------------------------
 \begin{titlepage}
-    % Fondo completo con el PDF que incluye la barra y el logo
-    \AddToShipoutPictureBG*{\includegraphics[width=\paperwidth, height=\paperheight]{build/fondo.pdf}}
+    % Fondo armado con las imágenes fuente versionadas en el repositorio.
+    % Así la portada no depende de archivos generados dentro de build/.
+    \AddToShipoutPictureBG*{%
+        \AtPageLowerLeft{%
+            \includegraphics[width=7mm,height=\paperheight]{Figures/barra.jpg}}%
+        \AtPageUpperLeft{\put(\LenToUnit{102mm},\LenToUnit{-20mm}){%
+            \raisebox{-\height}{%
+                \includegraphics[width=90mm]{Figures/Logo_UTN_FRT.png}}}}%
+    }
 
     % Contenido principal
     \begin{flushright}
