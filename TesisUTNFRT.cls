@@ -209,6 +209,9 @@
 \RequirePackage[utf8]{inputenc} % Required for inputting international characters
 \RequirePackage[T1]{fontenc} % Output font encoding for international characters
 \RequirePackage{palatino} % Use the Palatino font by default
+
+%--------------- si causa problemas te timeout en Overleaf, modificar backend=biber por backend=bibtex
+
 \RequirePackage[backend=biber,natbib=true, style=numeric, sorting=none]{biblatex} % Use the biber backend for bibliography
 \RequirePackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 \RequirePackage{xcolor}
