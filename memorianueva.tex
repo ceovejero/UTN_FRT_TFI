@@ -40,7 +40,7 @@
 % Se definen antes de iniciar el documento para que la clase las use en el PDF.
 \keywords{Ingeniería Electrónica, Tesis de Grado, Diseño Electrónico}
 
-% Redefinición de caracteres problemáticos en marcadores
+% Metadatos: hyperref convierte los caracteres UTF-8 a texto PDF.
 \hypersetup{
     pdftitle={Título del Documento},
     pdfauthor={Autor del Documento},
@@ -53,16 +53,8 @@
     urlcolor=blue
 }
 
-\pdfstringdefDisableCommands{%
-  \def\texttt#1{#1}%
-  \def\textbf#1{#1}%
-  \def\textit#1{#1}%
-  \def\"{\"}%
-  \def\~{~}%
-  \def\'{'}%
-  \def\^{}%
-  \def\textunderscore{\_} % Manejo del subrayado en marcadores
-}
+% No redefinir aquí los acentos: una definición como \def\"{\"}
+% es recursiva y puede bloquear la conversión de metadatos o marcadores.
 
 
 % Definir comandos requeridos por la clase
@@ -149,7 +141,6 @@ Esta sección es para agradecimientos personales y es totalmente \textbf{OPCIONA
 \printbibliography[heading=bibintoc]
 
 \end{document}
-
 
 
 

@@ -48,6 +48,21 @@ Este instructivo te guiará en el proceso de comenzar a trabajar con la plantill
 
 ## Paso 7. Compilar el proyecto
 
+Seleccionar `memorianueva.tex` como documento principal y PDFLaTeX como
+compilador. La bibliografía usa Biber, que latexmk ejecuta automáticamente.
+No es necesario generar `fondo.pdf` ni subir la carpeta `build/`.
+
+Si se actualiza una copia anterior de la plantilla, actualizar también
+`TesisUTNFRT.cls` y `.latexmkrc`, además de `memorianueva.tex` y `portada.tex`.
+Después usar **Recompile from scratch** una vez para descartar auxiliares viejos.
+
+Si persiste un timeout, comparar la versión de TeX Live con la del proyecto
+original que funciona. La verificación local documentada se realizó con
+TeX Live 2023; cambiar de versión es una prueba de diagnóstico, no una garantía
+de solución. Activar **Stop on first error** y descargar el log completo.
+Un log cortado a mitad de una línea no identifica por sí solo la instrucción
+que bloqueó el proceso. Véase [la comparación técnica](COMPARACION_OVERLEAF.md).
+
 1. Una vez completados los datos en **memorianueva.tex**, **portada.tex** y los capítulos, regresá al panel principal de Overleaf.
 2. Hacer clic en el botón **Recompile** para generar el PDF del documento completo.
 3. Revisar el PDF generado y verificar que:

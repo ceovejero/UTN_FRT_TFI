@@ -6,6 +6,14 @@ no atribuye estos cambios a LSE/FIUBA, Vel ni Johannes Böttcher.
 
 ## 2026-09-08 — Identificación y distribución de la adaptación
 
+- Revisión de compatibilidad con Overleaf: se elimina el bloque heredado de
+  redefiniciones de acentos para cadenas PDF, incluida la definición recursiva
+  de `\"`; se unifica `unicode=true` en la clase.
+- `.latexmkrc` deja de imponer `build/` al entorno remoto; la compilación local
+  conserva esa carpeta con `-outdir=build`, ya usado por LaTeX Workshop.
+- Se corrigen las instrucciones de compilación y se incorpora el informe
+  `COMPARACION_OVERLEAF.md` con las pruebas y limitaciones del diagnóstico.
+
 - Se renombra `MastersDoctoralThesis.cls` a `TesisUTNFRT.cls` y se cambia
   su identificación interna a `TesisUTNFRT`, versión 1.0, fecha 2026/09/08.
   Se conservan autores y licencia LPPL de la clase recibida.

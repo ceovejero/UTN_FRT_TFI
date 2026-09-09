@@ -17,22 +17,22 @@ Estos archivos deben acompañar la distribución de los fuentes.
 
 El documento principal es `memorianueva.tex`. Compilarlo en Overleaf o con una instalación de LaTeX que incluya `biblatex` y Biber para generar `memorianueva.pdf`.
 
-La portada utiliza el logo `Figures/Logo_UTN_FRT.png` y la barra `Figures/barra.jpg`. Sus fuentes editables permanecen en `Figures/`; todos los PDF generados y sus auxiliares se guardan en `build/`.
+La portada utiliza directamente el logo `Figures/Logo_UTN_FRT.png` y la barra `Figures/barra.jpg`. No requiere compilar otros documentos previamente.
 
-Para regenerar la identidad y el fondo, ejecutar desde la raíz, en este orden (también antes de la primera compilación si no existe `build/`):
+Opcionalmente, para generar PDF independientes de la identidad y del fondo, ejecutar desde la raíz:
 
 ```bash
-latexmk -pdf -interaction=nonstopmode -halt-on-error Figures/identidadUTNFRT.tex
-latexmk -pdf -interaction=nonstopmode -halt-on-error Figures/fondo.tex
+latexmk -pdf -outdir=build -interaction=nonstopmode -halt-on-error Figures/identidadUTNFRT.tex
+latexmk -pdf -outdir=build -interaction=nonstopmode -halt-on-error Figures/fondo.tex
 ```
 
 Para compilar desde WSL, ejecutar en la carpeta del proyecto:
 
 ```bash
-latexmk -pdf -interaction=nonstopmode -halt-on-error memorianueva.tex
+latexmk -pdf -outdir=build -interaction=nonstopmode -halt-on-error memorianueva.tex
 ```
 
-`latexmk` ejecuta PDFLaTeX y Biber las veces necesarias para resolver la bibliografía y las referencias cruzadas. La configuración `.latexmkrc` guarda el PDF y los auxiliares en `build/`, tanto desde la terminal como desde el editor.
+`latexmk` ejecuta PDFLaTeX y Biber las veces necesarias para resolver la bibliografía y las referencias cruzadas. La opción local `-outdir=build` guarda el PDF y los auxiliares en `build/`. `.latexmkrc` crea sus subcarpetas, pero no impone una ruta de salida a Overleaf. Sin esa opción se utiliza la ruta predeterminada del entorno.
 
 En VS Code con LaTeX Workshop, la configuración local selecciona la receta
 `latexmk (PDFLaTeX + Biber)` y guarda el PDF en `build/memorianueva.pdf`.
@@ -42,11 +42,11 @@ dejar vacía la bibliografía. Para regenerar la bibliografía en la carpeta de 
 
 ```bash
 biber --input-directory build --output-directory build memorianueva
-latexmk -pdf -interaction=nonstopmode -halt-on-error memorianueva.tex
+latexmk -pdf -outdir=build -interaction=nonstopmode -halt-on-error memorianueva.tex
 ```
 
 Si después de instalar una dependencia `latexmk` informa `gave an error in previous invocation` y no vuelve a compilar, forzar una reconstrucción:
 
 ```bash
-latexmk -g -pdf -interaction=nonstopmode -halt-on-error memorianueva.tex
+latexmk -g -pdf -outdir=build -interaction=nonstopmode -halt-on-error memorianueva.tex
 ```
